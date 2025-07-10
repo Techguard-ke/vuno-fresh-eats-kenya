@@ -2,7 +2,7 @@
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import { Leaf, Truck, Brain, Shield, Star, ArrowRight } from 'lucide-react';
+import { Leaf, Truck, Brain, Shield, Star, ArrowRight, Users, Award, Heart } from 'lucide-react';
 
 const Index = () => {
   const features = [
@@ -28,26 +28,88 @@ const Index = () => {
     }
   ];
 
-  const testimonials = [
+  const detailedTestimonials = [
     {
       name: "Israel Obongo",
-      content: "Vuno AI has revolutionized how I eat. The AI nutrition plans helped me manage my diabetes effectively.",
-      rating: 5
+      location: "Westlands, Nairobi",
+      condition: "Type 2 Diabetes",
+      content: "Vuno AI has revolutionized how I eat. The AI nutrition plans helped me manage my diabetes effectively. My HbA1c dropped from 9.2% to 6.8% in just 6 months!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      beforeAfter: "Lost 15kg, better blood sugar control"
     },
     {
       name: "Samuel Eyinda",
-      content: "Fresh vegetables delivered right to my door. The quality is exceptional and delivery is always on time.",
-      rating: 5
+      location: "Karen, Nairobi",
+      condition: "Busy Professional",
+      content: "Fresh vegetables delivered right to my door. The quality is exceptional and delivery is always on time. The meal planning saves me 5 hours per week!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      beforeAfter: "Saves 5 hours weekly, better nutrition"
     },
     {
       name: "Jackline Wangari",
-      content: "The personalized meal plans are amazing. I've lost weight and feel healthier than ever before.",
-      rating: 5
+      location: "Kilimani, Nairobi",
+      condition: "Weight Management",
+      content: "The personalized meal plans are amazing. I've lost 22kg in 8 months and feel healthier than ever before. The recipes are delicious and use local ingredients!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      beforeAfter: "Lost 22kg in 8 months"
     },
     {
       name: "Chelsea Abida",
-      content: "Best organic products in Nairobi! The AI recommendations match my dietary restrictions perfectly.",
-      rating: 5
+      location: "Lavington, Nairobi",
+      condition: "Food Allergies",
+      content: "Best organic products in Nairobi! The AI recommendations match my dietary restrictions perfectly. No more guessing which foods are safe for my allergies.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      beforeAfter: "Zero allergic reactions, peace of mind"
+    },
+    {
+      name: "Dr. Peter Kamau",
+      location: "Muthaiga, Nairobi",
+      condition: "Hypertension",
+      content: "As a doctor, I appreciate the scientific approach to nutrition. My blood pressure is now well-controlled through the recommended diet changes.",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      beforeAfter: "Blood pressure normalized"
+    },
+    {
+      name: "Grace Njeri",
+      location: "Thika Road, Nairobi",
+      condition: "Family of 5",
+      content: "The family plan has been a game-changer. Customized nutrition for each family member, from my 3-year-old to my grandmother. Everyone's health has improved!",
+      rating: 5,
+      image: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80",
+      beforeAfter: "Whole family healthier"
+    }
+  ];
+
+  const stats = [
+    { number: "15,000+", label: "Happy Customers" },
+    { number: "500+", label: "Partner Farmers" },
+    { number: "25", label: "Counties Served" },
+    { number: "100,000+", label: "Meals Planned" }
+  ];
+
+  const successStories = [
+    {
+      title: "Mary's Weight Loss Journey",
+      subtitle: "Lost 30kg in 10 months",
+      image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      story: "With personalized meal plans and fresh ingredients, Mary achieved her weight loss goals safely and sustainably."
+    },
+    {
+      title: "John's Diabetes Management",
+      subtitle: "HbA1c reduced from 10.1% to 6.5%",
+      image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      story: "Through AI-guided nutrition planning, John successfully managed his diabetes using local Kenyan foods."
+    },
+    {
+      title: "Sarah's Family Nutrition",
+      subtitle: "Improved health for family of 6",
+      image: "https://images.unsplash.com/photo-1511895426328-dc8714191300?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80",
+      story: "Custom meal plans for each family member's needs resulted in better health outcomes for everyone."
     }
   ];
 
@@ -78,6 +140,16 @@ const Index = () => {
                     Get Nutrition Plan
                   </Button>
                 </Link>
+              </div>
+              
+              {/* Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">
+                {stats.map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-2xl font-bold text-green-600">{stat.number}</div>
+                    <div className="text-sm text-gray-600">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
             <div className="relative">
@@ -126,8 +198,42 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Product Categories Preview */}
+      {/* Success Stories */}
       <section className="py-20 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Real Success Stories
+            </h2>
+            <p className="text-xl text-gray-600">
+              See how Vuno AI has transformed lives across Nairobi
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {successStories.map((story, index) => (
+              <Card key={index} className="overflow-hidden hover:shadow-lg transition-shadow">
+                <img 
+                  src={story.image}
+                  alt={story.title}
+                  className="w-full h-48 object-cover"
+                />
+                <CardContent className="p-6">
+                  <h3 className="text-lg font-semibold mb-2">{story.title}</h3>
+                  <p className="text-green-600 font-medium mb-3">{story.subtitle}</p>
+                  <p className="text-gray-600 text-sm">{story.story}</p>
+                  <Button variant="outline" size="sm" className="mt-4">
+                    Read Full Story
+                  </Button>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Product Categories Preview */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -174,8 +280,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-white">
+      {/* Detailed Testimonials Section */}
+      <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -186,17 +292,32 @@ const Index = () => {
             </p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {testimonials.map((testimonial, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {detailedTestimonials.map((testimonial, index) => (
               <Card key={index} className="hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
+                  <div className="flex items-center mb-4">
+                    <img 
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      className="w-12 h-12 rounded-full object-cover mr-4"
+                    />
+                    <div>
+                      <div className="font-semibold">{testimonial.name}</div>
+                      <div className="text-sm text-gray-600">{testimonial.location}</div>
+                      <div className="text-xs text-blue-600">{testimonial.condition}</div>
+                    </div>
+                  </div>
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
+                      <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-4">"{testimonial.content}"</p>
-                  <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                  <p className="text-gray-600 mb-4 text-sm">"{testimonial.content}"</p>
+                  <div className="bg-green-50 p-3 rounded-lg">
+                    <div className="text-sm font-medium text-green-800">Results:</div>
+                    <div className="text-sm text-green-700">{testimonial.beforeAfter}</div>
+                  </div>
                 </CardContent>
               </Card>
             ))}

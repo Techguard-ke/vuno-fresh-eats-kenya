@@ -11,6 +11,8 @@ import Footer from "./components/Footer";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import Nutrition from "./pages/Nutrition";
+import About from "./pages/About";
+import Services from "./pages/Services";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Login from "./pages/Login";
@@ -36,6 +38,8 @@ const App = () => (
                   <Route path="/" element={<Index />} />
                   <Route path="/products" element={<Products />} />
                   <Route path="/nutrition" element={<Nutrition />} />
+                  <Route path="/about" element={<About />} />
+                  <Route path="/services" element={<Services />} />
                   <Route path="/cart" element={<Cart />} />
                   <Route path="/checkout" element={<Checkout />} />
                   <Route path="/login" element={<Login />} />
