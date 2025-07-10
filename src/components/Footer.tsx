@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-          <p>&copy; 2024 Vuno AI. All rights reserved. | Delivering fresh, healthy living across Nairobi.</p>
+          <p>© 2025 Vuno AI. All rights reserved. | Delivering fresh, healthy living across Nairobi.</p>
         </div>
       </div>
     </footer>;
